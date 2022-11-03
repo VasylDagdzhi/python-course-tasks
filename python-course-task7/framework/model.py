@@ -52,10 +52,6 @@ class Model(ABC):
         raise NotImplementedError
 
     @classmethod
-    def edit(cls):
-        raise NotImplementedError
-
-    @classmethod
     def delete_data(cls, remove_id):
         instances = cls.get_data(cls.file)
         for i in range(len(instances)):
