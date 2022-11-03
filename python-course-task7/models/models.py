@@ -1,3 +1,4 @@
+# import the abstract Model class which has the basic object functionality and the colors
 from framework.model import Model, Bcolors
 
 
@@ -20,15 +21,17 @@ class Salon(Model):
         print(Bcolors.OK + separator)
         print(head_string)
         print(separator)
-        return separator
+        # return a defined separator string for our database table length to close the table
+        return separator 
 
     @classmethod
     def get_all_instances(cls):
         salons = Salon.get_data(cls.file)
         separator = Salon.print_header()
-        # printing the main data
+        # printing the main data by element
         for salon in salons:
             Salon.print_element(salon)
+        # print the closing separator
         print(separator, Bcolors.RESET)
 
     @staticmethod
@@ -44,9 +47,9 @@ class Salon(Model):
                 if salon['key'] == salon_id:
                     # if we find the line with the required name we return the whole data row in an object
                     return salon
-            # if the object is not returned we raise an attribute error
-            raise AttributeError
-        except AttributeError:
+            # if the object is not returned we raise an index error
+            raise IndexError
+        except IndexError:
             print(Bcolors.WARNING + f"There is no Salon with: {salon_id} ID in the database.", Bcolors.RESET)
             prompt = input("Print the Salons database? y/n ")
             if prompt == "y" or prompt == "Y":
@@ -64,9 +67,9 @@ class Salon(Model):
                 if salon['name'] == salon_name:
                     # if we find the line with the required name we return the whole data row in an object
                     return salon
-            # if the object is not returned we raise an attribute error
-            raise AttributeError
-        except AttributeError:
+            # if the object is not returned we raise an index error
+            raise IndexError
+        except IndexError:
             print(Bcolors.WARNING + f"There is no Salon with the: \'{salon_name}\' name.", Bcolors.RESET)
             prompt = input("Print the Salons database? y/n ")
             if prompt == "y" or prompt == "Y":
@@ -93,12 +96,12 @@ class Employee(Model):
         try:
             salon = Salon.get_by_name(salon_name)
             if salon is None:
-                raise AttributeError
+                raise IndexError
             cls.name = name,
             cls.email = email,
             cls.salon_name = salon_name
             return object.__new__(cls)
-        except AttributeError:
+        except IndexError:
             print(Bcolors.WARNING + "Please input valid Salon ID for the new employee.", Bcolors.RESET)
             return None
 
@@ -145,8 +148,8 @@ class Employee(Model):
             for employee in employees:
                 if employee['key'] == employee_id:
                     return employee
-            raise AttributeError
-        except AttributeError:
+            raise IndexError
+        except IndexError:
             print(Bcolors.FAIL + f"There is no employee for the input id: {employee_id}.", Bcolors.RESET)
             prompt = input("Print the employee database? y/n ")
             if prompt == "y" or prompt == "Y":

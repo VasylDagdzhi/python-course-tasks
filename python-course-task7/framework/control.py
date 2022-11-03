@@ -1,7 +1,10 @@
+# import two main object classes which will be used in manipulations
 from models.models import Salon, Employee
+# import a class with predefined colorful string codes for a nice output
 from framework.model import Bcolors
 
 
+# the main class with the data manipulation prompts and calls
 class Controller:
     @staticmethod
     def add_new_salon():
