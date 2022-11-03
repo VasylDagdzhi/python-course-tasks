@@ -85,7 +85,7 @@ class Salon(Model):
             if salons[i]["key"] == edit_index:
                 salons[i]["name"] = name
                 salons[i]["location"] = location
-                break
+                break  # once the required object id is saved with new values exit the loop
         cls.set_data(cls.file, salons)
 
 
