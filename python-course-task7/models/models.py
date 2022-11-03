@@ -22,7 +22,7 @@ class Salon(Model):
         print(head_string)
         print(separator)
         # return a defined separator string for our database table length to close the table
-        return separator 
+        return separator
 
     @classmethod
     def get_all_instances(cls):
@@ -48,7 +48,7 @@ class Salon(Model):
                     # if we find the line with the required name we return the whole data row in an object
                     return salon
             # if the object is not returned we raise an index error
-            raise IndexError
+            raise IndexError  # IndexError type chosen since we are checking by an entered index (salon_id, etc.)
         except IndexError:
             print(Bcolors.WARNING + f"There is no Salon with: {salon_id} ID in the database.", Bcolors.RESET)
             prompt = input("Print the Salons database? y/n ")
