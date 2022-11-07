@@ -1,56 +1,75 @@
-from datetime import date
 from decimal import Decimal
+from datetime import date, datetime
 from decorator import timer
 
 
 class Employee:
+    _name: str
+    _balance: Decimal
+    _rate: Decimal
+    _taxes: Decimal
+    _salary: Decimal
+    _employment_date: date
+
     def __init__(
         self,
         name: str,
-        start_time: date,
+        balance: Decimal,
         rate: Decimal,
-        taxes: int,
-        end_date: date = date.today(),
+        taxes: Decimal,
+        employment_date: date,
     ):
-        self.validation(
-            name=name, start_time=start_time, rate=rate, taxes=taxes, end_date=end_date
+        self._name = (
+            f"{name:<10}" + f" With the company for:   "
+            f"{(datetime.now().date() - employment_date).days} days."
         )
-        self.name = name
-        self._start_time = start_time
+        self._balance = balance
         self._rate = rate
         self._taxes = taxes
-        self._end_date = end_date
-        self._balance = self._recalculate_balance()
+        self._employment_date = employment_date
+        self._salary = self.calculate_salary()
 
-    @staticmethod
-    def validation(
-        name: str, start_time: date, rate: Decimal, taxes: int, end_date: date
-    ):
-        if not end_date > start_time:
-            raise ValueError("Start date can't be more than today.")
-        if not Decimal("100") > rate > Decimal("10"):
-            raise ValueError("Rate must be in between 10 and 100.")
-        if not 99 >= taxes > 1:
-            raise ValueError("Taxes must be in between 1 and 99.")
-        if not 20 >= len(name) >= 4:
-            raise ValueError("Name must have from 4 to 20 chars.")
+    def calculate_salary(self):
+        return (
+            datetime.now().date()
+            - self._employment_date
+            # calculate how many days an employee works
+        ).days * round(
+            self._rate - self._rate / 100 * self._taxes, 2
+        )  # calculate the daily rate with taxes
 
-    def days(self):
-        return (self._end_date - self._start_time).days
+    def get_employee_data(self):
+        return [self._name, self._balance, self._taxes, self._salary]
 
-    def how_long(self):
-        return f"{self.name} has worked for {self.days()} days."
 
-    def _recalculate_balance(self):
-        self._balance = self._rate * self.days()
-        return self._balance
+class Visualizer:
+    header_string = (
+        f"| {'Name':<60} | "
+        f"{'Balance in $':<20} | "
+        f"{'Taxes Pay in %':<20} | "
+        f"{'Salary in $':<20} |"
+    )
+    data_string = "| {:<60} | {:<20} | {:<20} | {:<20} |"
 
+    @classmethod
+    def show_separator(cls):
+        separator_length = len(cls.header_string)
+        print(separator_length * "-")
+
+    @classmethod
+    def show_header(cls):
+        print(cls.header_string)
+
+    @classmethod
+    def show_data(cls, data):
+        print(cls.data_string.format(*data))
+
+    @classmethod
     @timer
-    def update_rate(self, rate):
-        self._rate = Decimal(rate)
-        self._balance = self._recalculate_balance()
-        return self._rate
-
-    @property
-    def rate(self):
-        return self._rate
+    def show_table(cls, employees):
+        Visualizer.show_separator()
+        Visualizer.show_header()
+        Visualizer.show_separator()
+        for employee in employees:
+            Visualizer.show_data(employee.get_employee_data())
+        Visualizer.show_separator()
