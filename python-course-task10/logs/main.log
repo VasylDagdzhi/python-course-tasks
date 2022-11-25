@@ -1,0 +1,173 @@
+18-Nov-22 03:06:22 - ERROR - [Errno 2] No such file or directory: '/home/ljnero/PycharmProjects/python-course-task10/logs/main.log'
+18-Nov-22 03:06:25 - ERROR - invalid literal for int() with base 10: 'ss'
+18-Nov-22 03:06:28 - ERROR - invalid literal for int() with base 10: 'sssss'
+18-Nov-22 03:06:31 - ERROR - invalid literal for int() with base 10: 'dadasdasd'
+18-Nov-22 03:55:11 - INFO - Program session started.
+18-Nov-22 03:55:34 - WARNING - 
+18-Nov-22 03:55:34 - INFO - Program session closed.
+18-Nov-22 03:56:19 - INFO - Program session started.
+18-Nov-22 03:56:31 - WARNING - 
+18-Nov-22 03:56:31 - INFO - Program session closed.
+18-Nov-22 03:57:31 - INFO - Program session started.
+18-Nov-22 03:57:35 - WARNING - Program session interrupted.
+18-Nov-22 03:57:35 - INFO - Program session closed.
+18-Nov-22 03:59:05 - INFO - Program session started.
+18-Nov-22 03:59:08 - WARNING - Program session interrupted.
+18-Nov-22 03:59:08 - INFO - Program session closed.
+18-Nov-22 04:00:38 - INFO - Program session started.
+18-Nov-22 04:00:53 - ERROR - invalid literal for int() with base 10: 's'
+18-Nov-22 04:22:55 - WARNING - Program session interrupted.
+18-Nov-22 04:22:55 - INFO - Program session closed.
+18-Nov-22 04:23:00 - INFO - Program session started.
+18-Nov-22 04:25:08 - INFO - Program session started.
+18-Nov-22 04:25:16 - INFO - Data saved to: <_io.TextIOWrapper name='database/salons.json' mode='w' encoding='UTF-8'>
+18-Nov-22 04:27:48 - WARNING - Program session interrupted.
+18-Nov-22 04:27:48 - INFO - Program session closed.
+18-Nov-22 04:27:48 - INFO - Program session started.
+18-Nov-22 04:27:55 - INFO - Data:	 [{'name': 'Paris', 'location': 'Zelena street, Lviv', 'key': 2}, {'name': 'Barbers', 'location': 'Lychakivska street, Lviv', 'key': 3}, {'name': 'B', 'location': 'A', 'key': 4}, {'name': 'A', 'location': 'B', 'key': 5}]	saved to: database/salons.json
+18-Nov-22 04:29:37 - WARNING - Program session interrupted.
+18-Nov-22 04:29:37 - INFO - Program session closed.
+18-Nov-22 04:29:37 - INFO - Program session started.
+18-Nov-22 04:30:15 - INFO - Program session started.
+18-Nov-22 04:30:23 - INFO - Data:	 {'name': 'C', 'location': 'A', 'key': 6}	saved to: database/salons.json
+18-Nov-22 04:38:59 - WARNING - Program session interrupted.
+18-Nov-22 04:38:59 - INFO - Program session closed.
+25-Nov-22 19:39:28 - INFO - Program session started.
+25-Nov-22 19:40:44 - INFO - Program session started.
+25-Nov-22 19:41:35 - INFO - Program session started.
+25-Nov-22 19:44:06 - WARNING - Program session interrupted.
+25-Nov-22 19:44:06 - INFO - Program session closed.
+25-Nov-22 19:44:06 - INFO - Program session started.
+25-Nov-22 19:47:58 - WARNING - Program session interrupted.
+25-Nov-22 19:47:58 - INFO - Program session closed.
+25-Nov-22 19:47:58 - INFO - Program session started.
+25-Nov-22 19:51:49 - WARNING - Program session interrupted.
+25-Nov-22 19:51:49 - INFO - Program session closed.
+25-Nov-22 19:51:49 - INFO - Program session started.
+25-Nov-22 19:51:58 - ERROR - invalid literal for int() with base 10: 'kjhjkh'
+25-Nov-22 19:53:06 - WARNING - Program session interrupted.
+25-Nov-22 19:53:06 - INFO - Program session closed.
+25-Nov-22 19:53:06 - INFO - Program session started.
+25-Nov-22 19:53:08 - ERROR - invalid literal for int() with base 10: 'asdas'
+25-Nov-22 19:53:19 - WARNING - Program session interrupted.
+25-Nov-22 19:53:19 - INFO - Program session closed.
+25-Nov-22 19:53:19 - INFO - Program session started.
+25-Nov-22 19:53:23 - ERROR - invalid literal for int() with base 10: 'asdasd'
+25-Nov-22 19:55:00 - WARNING - Program session interrupted.
+25-Nov-22 19:55:00 - INFO - Program session closed.
+25-Nov-22 19:55:00 - INFO - Program session started.
+25-Nov-22 19:55:16 - INFO - Data:	 {'name': 'Bluzenko', 'location': 'Lviv', 'key': 7}	saved to: database/salons.json
+25-Nov-22 19:55:40 - WARNING - Program session interrupted.
+25-Nov-22 19:55:40 - INFO - Program session closed.
+25-Nov-22 19:55:40 - INFO - Program session started.
+25-Nov-22 19:58:59 - WARNING - Program session interrupted.
+25-Nov-22 19:58:59 - INFO - Program session closed.
+25-Nov-22 19:58:59 - INFO - Program session started.
+25-Nov-22 19:59:13 - INFO - Data:	 {'name': 'checking', 'location': 'Lviv', 'key': 8}	saved to: database/salons.json
+25-Nov-22 20:00:12 - WARNING - Program session interrupted.
+25-Nov-22 20:00:12 - INFO - Program session closed.
+25-Nov-22 20:00:12 - INFO - Program session started.
+25-Nov-22 20:00:18 - INFO - Data:	 {'name': 'sdas', 'location': 'sadasdas', 'key': 9}	saved to: database/salons.json
+25-Nov-22 20:00:40 - INFO - Data:	 {'name': 'sadasd', 'email': 'dasdad@asdsadsa', 'salon_name': 'Bluzenko', 'key': 4}	saved to: database/employees.json
+25-Nov-22 20:02:19 - WARNING - Program session interrupted.
+25-Nov-22 20:02:19 - INFO - Program session closed.
+25-Nov-22 20:02:19 - INFO - Program session started.
+25-Nov-22 20:02:33 - INFO - Data:	 {'name': 'sadasd', 'email': 'dasdad@asdsadsa', 'salon_name': 'Bluzenko', 'key': 4}	 removed from: database/employees.json
+25-Nov-22 20:13:09 - WARNING - Program session interrupted.
+25-Nov-22 20:13:09 - INFO - Program session closed.
+25-Nov-22 20:13:09 - INFO - Program session started.
+25-Nov-22 20:13:20 - INFO - Salon: [2] 	 Paris                                    	 Zelena street, Lviv                                                              	 printed.
+25-Nov-22 20:13:20 - INFO - Salon: [3] 	 Barbers                                  	 Lychakivska street, Lviv                                                         	 printed.
+25-Nov-22 20:13:20 - INFO - Salon: [4] 	 B                                        	 A                                                                                	 printed.
+25-Nov-22 20:13:20 - INFO - Salon: [6] 	 C                                        	 A                                                                                	 printed.
+25-Nov-22 20:13:20 - INFO - Salon: [7] 	 Bluzenko                                 	 Lviv                                                                             	 printed.
+25-Nov-22 20:13:20 - INFO - Salon: [8] 	 checking                                 	 Lviv                                                                             	 printed.
+25-Nov-22 20:13:20 - INFO - Salon: [9] 	 sdas                                     	 sadasdas                                                                         	 printed.
+25-Nov-22 20:13:20 - INFO - Salon database printed.
+25-Nov-22 20:13:30 - INFO - Salon: [2] 	 Paris                                    	 Zelena street, Lviv                                                              	 printed.
+25-Nov-22 20:14:04 - WARNING - Program session interrupted.
+25-Nov-22 20:14:04 - INFO - Program session closed.
+25-Nov-22 20:14:04 - INFO - Program session started.
+25-Nov-22 20:14:10 - INFO - Salon: [2] 	 Paris 	 Zelena street, Lviv 	 printed.
+25-Nov-22 20:15:19 - WARNING - Program session interrupted.
+25-Nov-22 20:15:19 - INFO - Program session closed.
+25-Nov-22 20:15:20 - INFO - Program session started.
+25-Nov-22 20:15:24 - INFO - Salon: '( [2] 	 Paris 	 Zelena street, Lviv )' 	 printed.
+25-Nov-22 20:16:07 - WARNING - Program session interrupted.
+25-Nov-22 20:16:07 - INFO - Program session closed.
+25-Nov-22 20:16:07 - INFO - Program session started.
+25-Nov-22 20:16:09 - INFO - Printed salon:  [2] 	 Paris 	 Zelena street, Lviv 	
+25-Nov-22 20:16:30 - WARNING - Program session interrupted.
+25-Nov-22 20:16:30 - INFO - Program session closed.
+25-Nov-22 20:16:30 - INFO - Program session started.
+25-Nov-22 20:16:31 - INFO - Printed salon:  [2] Paris Zelena street, Lviv 	
+25-Nov-22 20:16:58 - WARNING - Program session interrupted.
+25-Nov-22 20:16:58 - INFO - Program session closed.
+25-Nov-22 20:16:58 - INFO - Program session started.
+25-Nov-22 20:17:03 - INFO - Printed salon:  [2] [Paris] [Zelena street, Lviv]
+25-Nov-22 20:26:03 - WARNING - Program session interrupted.
+25-Nov-22 20:26:03 - INFO - Program session closed.
+25-Nov-22 20:26:03 - INFO - Program session started.
+25-Nov-22 20:26:12 - INFO - Printed salon:  [2] [Paris] [Zelena street, Lviv]
+25-Nov-22 20:26:12 - INFO - Printed salon:  [3] [Barbers] [Lychakivska street, Lviv]
+25-Nov-22 20:26:12 - INFO - Printed salon:  [4] [B] [A]
+25-Nov-22 20:26:12 - INFO - Printed salon:  [6] [C] [A]
+25-Nov-22 20:26:12 - INFO - Printed salon:  [7] [Bluzenko] [Lviv]
+25-Nov-22 20:26:12 - INFO - Printed salon:  [8] [checking] [Lviv]
+25-Nov-22 20:26:12 - INFO - Printed salon:  [9] [sdas] [sadasdas]
+25-Nov-22 20:26:12 - INFO - Salon database printed.
+25-Nov-22 20:26:19 - INFO - Printed salon:  [2] [Paris] [Zelena street, Lviv]
+25-Nov-22 20:26:19 - INFO - Printed salon:  [3] [Barbers] [Lychakivska street, Lviv]
+25-Nov-22 20:26:19 - INFO - Printed salon:  [4] [B] [A]
+25-Nov-22 20:26:19 - INFO - Printed salon:  [6] [C] [A]
+25-Nov-22 20:26:19 - INFO - Printed salon:  [7] [Bluzenko] [Lviv]
+25-Nov-22 20:26:19 - INFO - Printed salon:  [8] [checking] [Lviv]
+25-Nov-22 20:26:19 - INFO - Printed salon:  [9] [sdas] [sadasdas]
+25-Nov-22 20:26:19 - INFO - Salon database printed.
+25-Nov-22 20:36:23 - WARNING - Program session interrupted.
+25-Nov-22 20:36:23 - INFO - Program session closed.
+25-Nov-22 20:36:23 - INFO - Program session started.
+25-Nov-22 20:36:30 - INFO - Data:	 {'name': '1111', 'location': '111111', 'key': 10}	saved to: database/salons.json
+25-Nov-22 20:36:34 - INFO - Printed salon:  [2] [Paris] [Zelena street, Lviv]
+25-Nov-22 20:36:34 - INFO - Printed salon:  [3] [Barbers] [Lychakivska street, Lviv]
+25-Nov-22 20:36:34 - INFO - Printed salon:  [4] [B] [A]
+25-Nov-22 20:36:34 - INFO - Printed salon:  [6] [C] [A]
+25-Nov-22 20:36:34 - INFO - Printed salon:  [7] [Bluzenko] [Lviv]
+25-Nov-22 20:36:34 - INFO - Printed salon:  [8] [checking] [Lviv]
+25-Nov-22 20:36:34 - INFO - Printed salon:  [9] [sdas] [sadasdas]
+25-Nov-22 20:36:34 - INFO - Printed salon:  [10] [1111] [111111]
+25-Nov-22 20:36:34 - INFO - Salon database printed.
+25-Nov-22 20:36:40 - INFO - Printed salon:  [3] [Barbers] [Lychakivska street, Lviv]
+25-Nov-22 20:36:50 - INFO - Printed salon:  [2] [Paris] [Zelena street, Lviv]
+25-Nov-22 20:36:50 - INFO - Printed salon:  [3] [Barbers] [Lychakivska street, Lviv]
+25-Nov-22 20:36:50 - INFO - Printed salon:  [4] [B] [A]
+25-Nov-22 20:36:50 - INFO - Printed salon:  [6] [C] [A]
+25-Nov-22 20:36:50 - INFO - Printed salon:  [7] [Bluzenko] [Lviv]
+25-Nov-22 20:36:50 - INFO - Printed salon:  [8] [checking] [Lviv]
+25-Nov-22 20:36:50 - INFO - Printed salon:  [9] [sdas] [sadasdas]
+25-Nov-22 20:36:50 - INFO - Printed salon:  [10] [1111] [111111]
+25-Nov-22 20:36:50 - INFO - Salon database printed.
+25-Nov-22 20:40:55 - WARNING - Program session interrupted.
+25-Nov-22 20:40:55 - INFO - Program session closed.
+25-Nov-22 20:40:55 - INFO - Program session started.
+25-Nov-22 20:40:57 - ERROR - invalid literal for int() with base 10: 'w'
+25-Nov-22 20:41:02 - INFO - Printed salon:  [2] [Paris] [Zelena street, Lviv]
+25-Nov-22 20:41:02 - INFO - Printed salon:  [3] [Barbers] [Lychakivska street, Lviv]
+25-Nov-22 20:41:02 - INFO - Printed salon:  [4] [B] [A]
+25-Nov-22 20:41:02 - INFO - Printed salon:  [6] [C] [A]
+25-Nov-22 20:41:02 - INFO - Printed salon:  [7] [Bluzenko] [Lviv]
+25-Nov-22 20:41:02 - INFO - Printed salon:  [8] [checking] [Lviv]
+25-Nov-22 20:41:02 - INFO - Printed salon:  [9] [sdas] [sadasdas]
+25-Nov-22 20:41:02 - INFO - Printed salon:  [10] [1111] [111111]
+25-Nov-22 20:41:02 - INFO - Salon database printed.
+25-Nov-22 20:41:08 - ERROR - invalid literal for int() with base 10: 'asda'
+25-Nov-22 20:42:17 - WARNING - Program session interrupted.
+25-Nov-22 20:42:17 - INFO - Program session closed.
+25-Nov-22 20:42:17 - INFO - Program session started.
+25-Nov-22 20:42:20 - ERROR - invalid literal for int() with base 10: 'dd'
+25-Nov-22 20:42:52 - INFO - Program session started.
+25-Nov-22 20:42:56 - ERROR - invalid literal for int() with base 10: 'asdas'
+25-Nov-22 20:43:19 - WARNING - Program session interrupted.
+25-Nov-22 20:43:19 - INFO - Program session closed.
+25-Nov-22 20:43:19 - INFO - Program session started.
+25-Nov-22 20:43:22 - ERROR - invalid literal for int() with base 10: 'dasd'

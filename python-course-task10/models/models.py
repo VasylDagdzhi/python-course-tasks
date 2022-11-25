@@ -1,5 +1,6 @@
 # import the abstract Model class which has the basic object functionality and the colors
 from framework.model import Model, Bcolors
+import logging
 
 
 class Salon(Model):
@@ -33,10 +34,14 @@ class Salon(Model):
             Salon.print_element(salon)
         # print the closing separator
         print(separator, Bcolors.RESET)
+        # log the action
+        logging.info("Salon database printed.")
 
     @staticmethod
     def print_element(salon):
         print(Bcolors.OK + f"[{str(salon['key'])}] \t|\t {str(salon['name']):40} \t|\t {str(salon['location']):80}\t|")
+        logging.info(
+            f"Printed salon:  [{str(salon['key'])}] [{str(salon['name'])}] [{str(salon['location'])}]")
 
     @staticmethod
     def get_by_id(salon_id):
@@ -132,6 +137,8 @@ class Employee(Model):
         for employee in employees:
             Employee.print_element(employee)
         print(separator, Bcolors.RESET)
+        # log the action
+        logging.info("Employees database printed.")
 
     @staticmethod
     def print_element(employee):

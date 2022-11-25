@@ -1,4 +1,6 @@
 import json
+import logging
+import os.path
 from abc import ABC
 
 
@@ -26,16 +28,48 @@ class Model(ABC):
 
     @staticmethod
     def get_data(path):
-        file = open(path, "r")
-        data = json.loads(file.read())
-        file.close()
+        try:
+            file = open(path, "r")
+            data = json.loads(file.read())
+        except FileNotFoundError as err:
+            # if there is no file with the data or the directory where it should be, we log the error:
+            logging.error(err)
+            # check if the folder database exists and create if necessary:
+            if not os.path.exists("database"):
+                os.mkdir("database")
+            try:
+                # and create the file with the [] brackets as content:
+                file = open(path, "w")
+                file.write("[]")
+            except FileNotFoundError as err:
+                logging.error(err)
+            finally:
+                file.close()
+        finally:
+            file.close()
         return data
 
     @staticmethod
     def set_data(path, data):
-        file = open(path, "w")
-        file.write(json.dumps(data))
-        file.close()
+        try:
+            file = open(path, "w")
+            file.write(json.dumps(data))
+        except FileNotFoundError as err:
+            # if there is no file with the data or the directory where it should be, we log the error:
+            logging.error(err)
+            # double-check if the folder database exists and create if necessary:
+            if not os.path.exists("database"):
+                os.mkdir("database")
+            try:
+                # and retry creating the file with the data
+                file = open(path, "w")
+                file.write(json.dumps(data))
+            except FileNotFoundError as err:
+                logging.error(err)
+            finally:
+                file.close()
+        finally:
+            file.close()
 
     def save(self):
         data = self.get_data(self.file)
@@ -45,6 +79,9 @@ class Model(ABC):
         else:
             new_instance['key'] = 1
         data.append(new_instance)
+        log_string = f"Data:\t {new_instance}\tsaved to: {self.file}"
+        logging.info(log_string)
+        print(Bcolors.OK + log_string, Bcolors.RESET)
         self.set_data(self.file, data)
 
     @classmethod
@@ -56,6 +93,9 @@ class Model(ABC):
         instances = cls.get_data(cls.file)
         for i in range(len(instances)):
             if instances[i]["key"] == remove_id:
+                log_string = f"Data:\t {instances[i]}\t removed from: {cls.file}"
+                logging.info(log_string)
+                print(Bcolors.OK + log_string, Bcolors.RESET)
                 del instances[i]
                 break
         cls.set_data(cls.file, instances)
