@@ -171,3 +171,5 @@
 25-Nov-22 20:43:19 - INFO - Program session closed.
 25-Nov-22 20:43:19 - INFO - Program session started.
 25-Nov-22 20:43:22 - ERROR - invalid literal for int() with base 10: 'dasd'
+25-Nov-22 22:43:26 - WARNING - Program session interrupted.
+25-Nov-22 22:43:26 - INFO - Program session closed.
