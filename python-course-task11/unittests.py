@@ -1,4 +1,6 @@
 import unittest
+from argparse import ArgumentParser
+from main import args_parser
 
 from signers import Signer
 
@@ -6,6 +8,10 @@ from signers import Signer
 class TestSigner(unittest.TestCase):
     def setUp(self) -> None:
         self.signer = Signer("A", "B")
+        self.parser = args_parser()
+
+    def test_parser(self):
+        self.assertIsInstance(self.parser, ArgumentParser)
 
     def test_jwt_encode(self):
         payload = {

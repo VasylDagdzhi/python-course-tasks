@@ -23,10 +23,10 @@ lint: ## Check code quality
 	. venv/bin/activate; flake8
 
 unittest: ## Check code quality
-	. venv/bin/activate; python -m unittest tests/unittests.py
+	. venv/bin/activate; python -m unittest unittests.py
 
 pytest: ## Start testing with pytest
-	. venv/bin/activate; pytest tests_pytest.py
+	. venv/bin/activate; pytest pytests.py
 
 run_enc_pyjwt: ## Run encode by pyjwt for the input.json and save the result in output.json
 	. venv/bin/activate; python3 main.py  --secret="A" --salt="B" --using="pyjwt" --action="encode" --input_file="input.json" --output_file="output.json"
