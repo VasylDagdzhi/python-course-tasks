@@ -23,7 +23,7 @@ lint: ## Check code quality
 	. venv/bin/activate; flake8
 
 unittest: ## Check code quality
-	. venv/bin/activate; python -m unittest
+	. venv/bin/activate; python -m unittest tests/unittests.py
 
 pytest: ## Start testing with pytest
 	. venv/bin/activate; pytest tests_pytest.py

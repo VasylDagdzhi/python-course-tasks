@@ -28,11 +28,46 @@ def args_parser() -> ArgumentParser:
     return parser
 
 
+def encode_decode():
+    parser = args_parser()
+    namespace = parser.parse_args(sys.argv[1:])
+    sign = Signer(secret=namespace.secret, salt=namespace.salt)
+    if namespace.action == "encode":
+        encode: list = []
+        with open(file=namespace.input_file) as file:
+            try:
+                data = json.load(file)
+            except json.decoder.JSONDecodeError:
+                raise "invalid input data..."
+        for count, line in enumerate(data):
+            if namespace.using == "pyjwt":
+                encode.append(sign.jwt_encode(payload=data[count]))
+            if namespace.using == "itsdangerous":
+                encode.append(sign.itsdangerous_encode(payload=data[count]))
+        with open(file=namespace.output_file, mode="w") as file:
+            file.write(json.dumps(encode))
+
+    if namespace.action == "decode":
+        decode: list = []
+        with open(file=namespace.input_file) as file:
+            try:
+                data = json.load(file)
+            except json.decoder.JSONDecodeError:
+                raise "invalid input data..."
+        for count, line in enumerate(data):
+            if namespace.using == "pyjwt":
+                decode.append(sign.jwt_decode(encoded=line))
+            if namespace.using == "itsdangerous":
+                decode.append(sign.itsdangerous_decode(encoded=line))
+        with open(file=namespace.output_file, mode="w") as file:
+            file.write(json.dumps(decode))
+
+
 if __name__ == "__main__":
     parser = args_parser()
     namespace = parser.parse_args(sys.argv[1:])
     sign = Signer(secret=namespace.secret, salt=namespace.salt)
-    data: list = []
+    encode_decode: list = []
     with open(file=namespace.input_file) as file:
         try:
             data = json.load(file)
@@ -41,16 +76,15 @@ if __name__ == "__main__":
     if namespace.action == "encode":
         for count, line in enumerate(data):
             if namespace.using == "pyjwt":
-                data.append(sign.jwt_encode(payload=data[count]))
+                encode_decode.append(sign.jwt_encode(payload=data[count]))
             if namespace.using == "itsdangerous":
-                data.append(sign.itsdangerous_encode(payload=data[count]))
+                encode_decode.append(sign.itsdangerous_encode(payload=data[count]))
 
     elif namespace.action == "decode":
         for count, line in enumerate(data):
             if namespace.using == "pyjwt":
-                data.append(sign.jwt_decode(encoded=line))
+                encode_decode.append(sign.jwt_decode(encoded=line))
             if namespace.using == "itsdangerous":
-                data.append(sign.itsdangerous_decode(encoded=line))
+                encode_decode.append(sign.itsdangerous_decode(encoded=line))
     with open(file=namespace.output_file, mode="w") as file:
-        file.write(json.dumps(data))
-    print("Done")
+        file.write(json.dumps(encode_decode))
