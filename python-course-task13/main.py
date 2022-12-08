@@ -1,46 +1,50 @@
 # # 1. double_result
 # # This decorator function should return the result of another function multiplied by two
-# def double_result(func):
-#     # return function result multiplied by two
-#     pass
-#
-#
-# def add(a, b):
-#     return a + b
-#
-#
-# add(5, 5)  # 10
-#
-#
-# @double_result
-# def add(a, b):
-#     return a + b
-#
-#
-# add(5, 5)  # 20
+def double_result(func):
+    # return function result multiplied by two
+    def inner(*args, **kwagrs):
+        result = func(*args, **kwagrs)
+        return result * 2
+
+    return inner
+
+
+def add(a, b):
+    return a + b
+
+
+print(f"Result of adding 5 and 5 is: {add(5, 5)}")  # 10
+
+
+@double_result
+def add(a, b):
+    return a + b
+
+
+print(f"Result of adding 5 and 5 with double decorator is: {add(5, 5)}")  # 10
 #
 #
 # # 2. only_odd_parameters
 # # This decorator function should only allow a function to have odd numbers as parameters,
 # # otherwise, return the string "Please use only odd numbers!"
 #
-# def only_odd_parameters(func):
-#     # if args passed to func are not odd - return "Please use only odd numbers!"
-#     pass
-#
-#
-# @only_odd_parameters
-# def add(a, b):
-#     return a + b
-#
-#
-# add(5, 5)  # 10
-# add(4, 4)  # "Please use only odd numbers!"
-#
-#
-# @only_odd_parameters
-# def multiply(a, b, c, d, e):
-#     return a * b * c * d * e
+def only_odd_parameters(func):
+    # if args passed to func are not odd - return "Please use only odd numbers!"
+    pass
+
+
+@only_odd_parameters
+def add(a, b):
+    return a + b
+
+
+add(5, 5)  # 10
+add(4, 4)  # "Please use only odd numbers!"
+
+
+@only_odd_parameters
+def multiply(a, b, c, d, e):
+    return a * b * c * d * e
 #
 #
 # # 3.* logged
