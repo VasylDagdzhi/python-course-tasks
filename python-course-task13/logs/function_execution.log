@@ -1,0 +1,7 @@
+08-Dec-22 23:47:26 - INFO - Function: func ((4, 4, 4)) executed and returned: 6
+08-Dec-22 23:47:26 - INFO - Function: func ({'a': 1, 'b': 2, 'c': 3}) executed and returned: 6
+08-Dec-22 23:49:47 - INFO - Function: func ((4, 4, 4)) executed and returned: 6
+08-Dec-22 23:49:47 - INFO - Function: func ({'a': 1, 'b': 2, 'c': 3}) executed and returned: 5
+08-Dec-22 23:50:31 - INFO - Function: func ((4, 4, 4)) executed and returned: 6
+08-Dec-22 23:50:31 - INFO - Function: func ({'a': 1, 'b': 2, 'c': 3}) executed and returned: 5
+08-Dec-22 23:50:31 - INFO - Function: func ((2, 3){'afg': 4, 'num': 9}) executed and returned: 7
