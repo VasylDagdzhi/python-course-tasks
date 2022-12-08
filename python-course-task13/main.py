@@ -121,29 +121,45 @@ func(4, 4, 4)
 func(a=1, b=2, c=3)
 func(2, 3, afg=4, num=9)
 
+print("\nPart 4.1 Int type check\n")
+
+
 # # 4. type_check
 # # you should be able to pass 1 argument to decorator - type.
 # # decorator should check if the input to the function is correct based on type.
 # # If it is wrong, it should print(f"Wrong Type: {type}"), otherwise function should be executed.
-#
-# def type_check(correct_type):
-#     # put code here
-#     pass
-#
-#
-# @type_check(int)
-# def times2(num):
-#     return num * 2
-#
-#
-# print(times2(2))
-# times2('Not A Number')  # "Wrong Type: string" should be printed, since non-int passed to decorated function
-#
-#
-# @type_check(str)
-# def first_letter(word):
-#     return word[0]
-#
-#
-# print(first_letter('Hello World'))
-# first_letter(['Not', 'A', 'String'])  # "Wrong Type: list" should be printed, since non-str passed to decorated function
+
+def type_check(correct_type):
+    def wrapper(func):
+        def inner(arg):
+            if type(arg) is not correct_type:
+                return f"Wrong Type: {type(arg).__name__}"
+            else:
+                return func(arg)
+
+        return inner
+
+    return wrapper
+
+
+@type_check(int)
+@logged
+def times2(num):
+    return num * 2
+
+
+print(times2(2))
+print(times2('Not A Number'))  # "Wrong Type: string" should be printed, since non-int passed to decorated function
+
+print("\nPart 4.2 Str ttype check\n")
+
+
+@type_check(str)
+@logged
+def first_letter(word):
+    return word[0]
+
+
+print(first_letter('Hello World'))
+print(first_letter(
+    ['Not', 'A', 'String']))  # "Wrong Type: list" should be printed, since non-str passed to decorated function
