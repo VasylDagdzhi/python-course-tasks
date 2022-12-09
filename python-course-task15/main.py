@@ -1,5 +1,7 @@
 import argparse
 from human import Human, HumanSerializer
+import json
+import csv
 
 
 class Calculator:
@@ -32,5 +34,7 @@ class Calculator:
 if __name__ == "__main__":
     Calculator.calc()
     data = Human(name="Alex", surname="Mitin", age=38)
-    # HumanSerializer.serialize(, "JSON")
-    # HumanSerializer.serialize(Human(name="Alex", surname="Mitin", age=38), "CSV")
+    print(data.__dict__)
+
+    HumanSerializer.serialize(data, "JSON")
+    HumanSerializer.serialize(data, "CSV")

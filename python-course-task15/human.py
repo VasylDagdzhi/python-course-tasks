@@ -1,21 +1,37 @@
+import csv
 import datetime
+import json
 
 
 class Human:
-    def __int__(self, name, surname, age):
+    name: str
+    surname: str
+    age: int
+    birth: datetime.datetime
+
+    def __init__(self, name, surname, age):
         self.name = name
         self.surname = surname
         self.age = age
         self.birth = datetime.datetime.now()
+        self.__dict__ = {
+            "name": name,
+            "surname": surname,
+            "age": age,
+            "birth": self.birth.ctime()
+        }
 
 
 class HumanSerializer:
-    pass
-    # def serialize(self, obj, format):
-    #     if format == "JSON":
-    #         print(self.__dict__)
-    #         pass
-    #     elif format == "CSV":
-    #         pass
-    #     else:
-    #         raise ValueError(f"Unrecognized format: {format}")
+    @staticmethod
+    def serialize(obj, format):
+        if format == "JSON":
+            print(obj.__dict__)
+            with open("humans.json", 'w') as h:
+                h.write(json.dumps(obj.__dict__))
+        elif format == "CSV":
+            with open("humans.csv", 'w') as h:
+                w = csv.writer(h)
+                w.writerow(obj.__dict__)
+        else:
+            raise ValueError(f"Unrecognized format: {format}")
