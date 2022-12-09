@@ -32,6 +32,12 @@ class HumanSerializer:
         elif format == "CSV":
             with open("humans.csv", 'w') as h:
                 w = csv.writer(h)
-                w.writerow(obj.__dict__)
+                header = []
+                data = []
+                for key in obj.__dict__:
+                    header.append(f"'{key}'")
+                    data.append(f"'{obj.__dict__[key]}'")
+                w.writerow(header)
+                w.writerow(data)
         else:
             raise ValueError(f"Unrecognized format: {format}")
