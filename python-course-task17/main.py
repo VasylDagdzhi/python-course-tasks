@@ -1,6 +1,19 @@
-import multiprocessing
-import resource
+import aiohttp
+import asyncio
+import time
 
-# print(multiprocessing.cpu_count())
-# print(f"{resource.getrlimit(resource.RLIMIT_NOFILE)[0]:,}")
+BASE_URL = "https://pokeapi.co/api/v2/"
 
+
+async def get_pokemons(session):
+    result = await session.get(BASE_URL)
+    result_json= await result.json()
+    print(result_json)
+
+
+async def main():
+    async with aiohttp.ClientSession() as session:
+        await get_pokemons(session)
+
+
+asyncio.run(main())
