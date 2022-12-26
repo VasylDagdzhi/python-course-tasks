@@ -1,6 +1,9 @@
 import aiohttp
 import asyncio
 import time
+from concurrent.futures import ThreadPoolExecutor
+import requests
+from queue import Queue
 
 BASE_URL = "https://pokeapi.co/api/v2/"
 
@@ -90,11 +93,35 @@ async def get_pokemons_by_type(session):
     type_id = int(input("Please enter the pokemon type ID to print.  "))
     await get_pokemons(session, type_id)
 
-
+@time_count_decorator
 async def main():
     async with aiohttp.ClientSession() as session:
         await get_pokemons(session)
         await get_pokemons_by_type(session)
 
+
+@time_count_decorator
+def get_pokemons_in_threads(session, url_queue):
+    with session.get(url_queue.get()) as response:
+        print(f" Name: {response.json()['name']} Weight: {response.json()['weight']}")
+
+@time_count_decorator
+def form_url_queue(session):
+    with session.get(f"{BASE_URL}/pokemon") as response:
+        resp_json = response.json()['results']
+        url_queue = Queue()
+        for r in resp_json:
+            url_queue.put(r['url'])
+        return url_queue
+
+@time_count_decorator
+def main_with_threads():
+    with ThreadPoolExecutor(max_workers=20) as executor:
+        with requests.Session() as session:
+            url_queue = form_url_queue(session)
+            executor.map(get_pokemons_in_threads, [session] * 20, [url_queue] * 20)
+
+
+main_with_threads()
 
 asyncio.run(main())
